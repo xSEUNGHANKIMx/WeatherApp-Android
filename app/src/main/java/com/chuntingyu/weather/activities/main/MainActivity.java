@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.TextViewCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,8 +25,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chuntingyu.weather.applications.BaseActivity;
-import com.chuntingyu.weather.applications.SplashActivity;
+import com.chuntingyu.weather.applications.LoadingActivity;
 import com.chuntingyu.weather.applications.WeatherApp;
 import com.chuntingyu.weather.R;
 import com.chuntingyu.weather.models.Data;
@@ -58,7 +58,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 @RuntimePermissions
-public class MainActivity extends BaseActivity implements MainMvpView {
+public class MainActivity extends AppCompatActivity implements MainMvpView {
     private static final String TAG = "MainActivity";
     private FusedLocationProviderClient fusedLocationClient;
     private double lat;
@@ -234,7 +234,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Override
     public void openSplashActivity() {
-        Intent intent = SplashActivity.getStartIntent(this);
+        Intent intent = LoadingActivity.getStartIntent(this);
         startActivity(intent);
         finish();
     }

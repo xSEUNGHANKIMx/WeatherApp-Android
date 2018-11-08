@@ -1,5 +1,6 @@
 package com.chuntingyu.weather.applications;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -10,13 +11,13 @@ import com.chuntingyu.weather.tools.coredata.DataManager;
 import com.chuntingyu.weather.activities.login.LoginActivity;
 import com.chuntingyu.weather.activities.main.MainActivity;
 
-public class SplashActivity extends BaseActivity implements SplashMvpView {
+public class LoadingActivity extends Activity implements LoadingMvpView {
 
     private static final int MY_PERMISSIONS_FINE_LOCATION = 0;
-    SplashPresenterBase mSplashPresenter;
+    LoadingPresenterBase mSplashPresenter;
 
     public static Intent getStartIntent(Context context) {
-        Intent intent = new Intent(context, SplashActivity.class);
+        Intent intent = new Intent(context, LoadingActivity.class);
         return intent;
     }
 
@@ -27,22 +28,22 @@ public class SplashActivity extends BaseActivity implements SplashMvpView {
 
         DataManager dataManager = ((WeatherApp) getApplication()).getDataManager();
 
-        mSplashPresenter = new SplashPresenterBase(dataManager);
+        mSplashPresenter = new LoadingPresenterBase(dataManager);
 
         mSplashPresenter.onAttach(this);
 
-        mSplashPresenter.decideNextActivity();
+        mSplashPresenter.choiceActivity();
     }
 
     @Override
-    public void openMainActivity() {
+    public void startMain() {
         Intent intent = MainActivity.getStartIntent(this);
         startActivity(intent);
         finish();
     }
 
     @Override
-    public void openLoginActivity() {
+    public void startLoging() {
         Intent intent = LoginActivity.getStartIntent(this);
         startActivity(intent);
         finish();

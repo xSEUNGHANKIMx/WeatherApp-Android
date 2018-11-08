@@ -5,7 +5,7 @@ import com.chuntingyu.weather.tools.coredata.DataManager;
 /**
  * Created by Kevin on 2018/3/14.
  */
-public class BasePresenterBase<V extends BaseMvpView> implements BaseMvpPresenter<V> {
+public class BasePresenterBase<V> implements BaseMvpPresenter<V> {
     private V mvpView;
     private DataManager dataManager;
 
