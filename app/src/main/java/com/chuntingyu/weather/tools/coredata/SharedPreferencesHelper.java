@@ -29,7 +29,7 @@ public class SharedPreferencesHelper {
     }
 
     public String getEmail() {
-        return sharedPreferences.getString(EmailKey, null);
+        return sharedPreferences.getString(EmailKey, "");
     }
 
     public void putLoggedInMode(boolean loggedIn) {

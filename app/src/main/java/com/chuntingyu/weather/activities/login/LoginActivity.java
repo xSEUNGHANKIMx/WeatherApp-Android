@@ -1,5 +1,6 @@
 package com.chuntingyu.weather.activities.login;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.chuntingyu.weather.activities.main.MainActivity;
-import com.chuntingyu.weather.applications.BaseActivity;
 import com.chuntingyu.weather.common.CommonUtils;
 import com.chuntingyu.weather.applications.WeatherApp;
 import com.chuntingyu.weather.R;
@@ -18,7 +18,7 @@ import com.gc.materialdesign.views.ButtonRectangle;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends BaseActivity implements LoginMvpView {
+public class LoginActivity extends Activity implements LoginMvpView {
     private static final String TAG = "LoginActivity";
 
     LoginPresenterBase loginPresenter;

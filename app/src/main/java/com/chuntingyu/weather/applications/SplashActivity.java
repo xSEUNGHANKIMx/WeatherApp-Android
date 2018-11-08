@@ -1,5 +1,6 @@
 package com.chuntingyu.weather.applications;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -10,9 +11,8 @@ import com.chuntingyu.weather.tools.coredata.DataManager;
 import com.chuntingyu.weather.activities.login.LoginActivity;
 import com.chuntingyu.weather.activities.main.MainActivity;
 
-public class SplashActivity extends BaseActivity implements SplashMvpView {
+public class SplashActivity extends Activity implements SplashMvpView {
 
-    private static final int MY_PERMISSIONS_FINE_LOCATION = 0;
     SplashPresenterBase mSplashPresenter;
 
     public static Intent getStartIntent(Context context) {

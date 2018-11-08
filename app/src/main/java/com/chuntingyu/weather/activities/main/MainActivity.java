@@ -1,6 +1,7 @@
 package com.chuntingyu.weather.activities.main;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,7 +25,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chuntingyu.weather.applications.BaseActivity;
 import com.chuntingyu.weather.applications.SplashActivity;
 import com.chuntingyu.weather.applications.WeatherApp;
 import com.chuntingyu.weather.R;
@@ -58,7 +58,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 @RuntimePermissions
-public class MainActivity extends BaseActivity implements MainMvpView {
+public class MainActivity extends Activity implements MainMvpView {
     private static final String TAG = "MainActivity";
     private FusedLocationProviderClient fusedLocationClient;
     private double lat;
